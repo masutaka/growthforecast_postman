@@ -1,7 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'yaml'
-Dir['lib/*.rb'].each {|f| require_relative f}
+Dir[File.join __dir__, 'lib/*.rb'].each {|f| require_relative f}
 
 settings_yml = File.join __dir__, 'settings.yml'
 settings = YAML.load open settings_yml
