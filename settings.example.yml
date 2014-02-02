@@ -1,0 +1,10 @@
+growth_forecast:
+  url:
+    http://example.com:5125
+  service_name:
+    any_service_name
+  section_name:
+    any_section_name
+blog:
+  rss:
+    http://blog.example.com/feed.rss
