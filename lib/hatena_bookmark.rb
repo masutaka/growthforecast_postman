@@ -2,8 +2,9 @@
 
 require 'net/http'
 require 'rexml/document'
+require_relative 'social_service'
 
-class HatenaBookmark < FeedService
+class HatenaBookmark < SocialService
   def count
     # http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount#total
     request = <<EOS

@@ -1,6 +1,6 @@
 #!/usr/bin/env ruby
 
-class FeedService
+class SocialService
   def initialize settings
     @blog_url = settings['blog']['url']
     @blog_rss = settings['blog']['rss']
