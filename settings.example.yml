@@ -6,5 +6,7 @@ growth_forecast:
   section_name:
     any_section_name
 blog:
+  url:
+    http://blog.example.com/
   rss:
     http://blog.example.com/feed.rss

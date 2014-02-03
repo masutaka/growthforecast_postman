@@ -19,6 +19,10 @@ class GrowthForecast
     post 'livedoor Reader', number
   end
 
+  def post_hatena_bookmark number
+    post 'Hatena::Bookmark', number
+  end
+
   private
 
   def post graph_name, number

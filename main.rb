@@ -9,3 +9,4 @@ settings = YAML.load open settings_yml
 gf = GrowthForecast.new settings
 gf.post_feedly Feedly.new(settings).subscribers
 gf.post_livedoor_reader LivedoorReader.new(settings).subscribers
+gf.post_hatena_bookmark HatenaBookmark.new(settings).count
