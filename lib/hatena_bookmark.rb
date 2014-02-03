@@ -7,7 +7,8 @@ require_relative 'social_service'
 class HatenaBookmark < SocialService
   def count
     # http://developer.hatena.ne.jp/ja/documents/bookmark/apis/getcount#total
-    request = <<EOS
+    response = Net::HTTP.new('b.hatena.ne.jp').start do |http|
+      request = <<EOS
 <?xml version="1.0"?>
 <methodCall>
   <methodName>bookmark.getTotalCount</methodName>
@@ -18,10 +19,10 @@ class HatenaBookmark < SocialService
   </params>
 </methodCall>
 EOS
-    header = {'Content-Type' => 'text/xml; charset=utf-8', 'Content-Length' => request.bytesize.to_s}
-    http = Net::HTTP.new 'b.hatena.ne.jp'
-    http.start
-    response = http.request_post '/xmlrpc', request, header
+      header = {'Content-Type' => 'text/xml; charset=utf-8', 'Content-Length' => request.bytesize.to_s}
+      http.request_post '/xmlrpc', request, header
+    end
+
     doc = REXML::Document.new response.body
     doc.elements['/methodResponse/params/param/value/int'].text.to_i
   end
