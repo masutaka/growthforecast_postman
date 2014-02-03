@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 class SocialService
   def initialize settings
     @blog_url = settings['blog']['url']

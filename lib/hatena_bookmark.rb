@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'net/http'
 require 'rexml/document'
 require_relative 'social_service'

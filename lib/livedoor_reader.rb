@@ -1,5 +1,3 @@
-#!/usr/bin/env ruby
-
 require 'net/http'
 require 'uri'
 require_relative 'social_service'
